@@ -5,7 +5,7 @@
 An imaginary **"Robotics"** regulated technology website and application for Technical Safety BC, built to demonstrate Claude Code's multi-agent squad capabilities. Modeled after the existing [Elevating Devices](https://www.technicalsafetybc.ca/technologies/elevating-devices) technology pages.
 
 **Repository**: `gustavoparolin/robotics01`
-**Working Directory**: `C:\Users\gusta\web\robotics01`
+**Working Directory**: `C:\Users\gusta\OneDrive\web\robotics01`
 
 ---
 
