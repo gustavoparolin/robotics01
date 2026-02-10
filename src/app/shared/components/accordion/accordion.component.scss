@@ -1,0 +1,68 @@
+@use '../../../../styles/variables' as *;
+
+.tsbc-accordion {
+  border: 1px solid $primary-mid;
+  border-radius: $border-radius-sm;
+  overflow: hidden;
+
+  & + & {
+    margin-top: $space-xs;
+  }
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: $space-sm $space-md;
+  background: $white;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background $transition;
+
+  &:hover {
+    background: $primary-light;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $secondary;
+    outline-offset: -2px;
+  }
+}
+
+.accordion-title {
+  font-size: $font-size-body;
+  font-weight: $font-weight-semibold;
+  color: $primary-dark;
+  margin: 0;
+}
+
+.accordion-icon {
+  font-size: $font-size-small;
+  color: $primary;
+  transition: transform $transition;
+  flex-shrink: 0;
+  margin-left: $space-sm;
+
+  &.open {
+    transform: rotate(180deg);
+  }
+}
+
+.accordion-panel {
+  border-top: 1px solid $primary-mid;
+}
+
+.accordion-content {
+  padding: $space-md;
+  font-size: $font-size-body;
+  line-height: $line-height;
+  color: $text-dark;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $space-sm;
+    font-size: $font-size-body-min;
+  }
+}

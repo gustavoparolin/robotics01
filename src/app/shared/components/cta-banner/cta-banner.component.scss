@@ -1,0 +1,58 @@
+@use '../../../../styles/variables' as *;
+
+.tsbc-cta-banner {
+  padding: $space-xl $padding-desktop;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $space-lg $padding-mobile;
+  }
+}
+
+.cta-container {
+  max-width: $max-width;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-lg;
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.cta-content {
+  flex: 1;
+}
+
+.cta-heading {
+  color: $white;
+  font-size: $font-size-h3;
+  margin-bottom: $space-sm;
+}
+
+.cta-body {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: $font-size-body-min;
+  line-height: 1.6;
+}
+
+.cta-button {
+  display: inline-block;
+  background: $white;
+  color: $primary;
+  padding: $space-sm $space-lg;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-small;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  transition: all $transition;
+
+  &:hover {
+    background: $primary-light;
+    color: $primary-dark;
+  }
+}

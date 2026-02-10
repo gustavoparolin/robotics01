@@ -1,0 +1,58 @@
+@use '../../../../styles/variables' as *;
+
+.tsbc-hero {
+  padding: $space-3xl $padding-desktop;
+  overflow: hidden;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $space-xl $padding-mobile;
+  }
+}
+
+.hero-container {
+  max-width: $max-width;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-xl;
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-title {
+  color: $text-dark;
+  margin-bottom: $space-md;
+}
+
+.hero-subtitle {
+  color: $text-dark;
+  font-size: $font-size-body;
+  line-height: 1.6;
+  max-width: 600px;
+
+  @media (max-width: $breakpoint-mobile) {
+    max-width: 100%;
+  }
+}
+
+.hero-image {
+  flex-shrink: 0;
+
+  img {
+    max-width: 400px;
+    height: auto;
+    border-radius: $border-radius;
+
+    @media (max-width: $breakpoint-mobile) {
+      max-width: 250px;
+    }
+  }
+}

@@ -1,0 +1,147 @@
+@use '../../../../styles/variables' as *;
+
+.tsbc-footer {
+  margin-top: $space-2xl;
+}
+
+.back-to-top {
+  background: $primary;
+  padding: $space-xl $padding-desktop;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $space-lg $padding-mobile;
+  }
+}
+
+.back-to-top-container {
+  max-width: $max-width;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: $space-md;
+}
+
+.back-to-top-btn {
+  background: none;
+  border: none;
+  color: $white;
+  font-family: $font-family;
+  font-size: $font-size-body;
+  font-weight: $font-weight-semibold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+  transition: opacity $transition;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.arrow-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: $primary-mid;
+  border-radius: $border-radius-sm;
+  font-size: 18px;
+  color: $primary-dark;
+}
+
+.footer-actions {
+  display: flex;
+  gap: $space-sm;
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.footer-btn {
+  display: inline-block;
+  padding: $space-sm $space-md;
+  border-radius: $border-radius-sm;
+  font-size: $font-size-small;
+  font-weight: $font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all $transition;
+
+  &.primary {
+    background: $white;
+    color: $primary;
+
+    &:hover {
+      background: $primary-light;
+    }
+  }
+
+  &.secondary {
+    background: transparent;
+    color: $white;
+    border: 2px solid $white;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+.footer-content {
+  background: $primary-dark;
+  padding: $space-xl $padding-desktop;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $space-lg $padding-mobile;
+  }
+}
+
+.footer-container {
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+.acknowledgment,
+.privacy {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: $font-size-small;
+  line-height: 1.6;
+  margin-bottom: $space-md;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: $space-md;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  flex-wrap: wrap;
+  gap: $space-sm;
+}
+
+.copyright {
+  color: $white;
+  font-size: $font-size-small;
+  font-weight: $font-weight-semibold;
+}
+
+.footer-links {
+  display: flex;
+  gap: $space-md;
+
+  a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: $font-size-small;
+    transition: color $transition;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}
