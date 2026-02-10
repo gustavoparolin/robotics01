@@ -6,6 +6,27 @@ An imaginary **"Robotics"** regulated technology website and application for Tec
 
 **Repository**: `gustavoparolin/robotics01`
 **Working Directory**: `C:\Users\gusta\OneDrive\web\robotics01`
+**Resources**: `C:\Users\gusta\OneDrive\web\_tsbc_resources\`
+
+---
+
+## Reference Resources
+
+The `_tsbc_resources/` folder contains production TSBC assets to reference:
+
+| Resource | Path (relative to `_tsbc_resources/`) | Use |
+|----------|---------------------------------------|-----|
+| Codebase example | `Robotic Devices/_resources/codebase example/` | Angular architecture, NgRx, Formly, MSAL, SQLite |
+| Client Portal screenshots | `Robotic Devices/_resources/Client Portal/` | 19 PNGs — complete licence application flow (form spec) |
+| D365 screenshots | `Robotic Devices/_resources/D365 screenshots/` | Backend field mappings for licence/application models |
+| Robotics logo | `Robotic Devices/_resources/logo.png` | Custom icon for the Robotics technology |
+| SCSS design tokens | `.../codebase example/src/scss/abstracts/` | `_colors.scss`, `_font-sizes.scss`, `_vars.scss`, `_mixins.scss` |
+| Formly constants | `.../codebase example/src/app/shared/constants.ts` | Field types, validations, form definitions (1,526 lines) |
+| Data models | `.../codebase example/src/app/shared/models/` | licence, application, certification, payment models |
+| SQLite storage | `.../codebase example/src/app/shared/storage/SqliteStorage.ts` | Browser SQLite via sql.js |
+| Inter fonts | `.../codebase example/src/assets/fonts/Inter/` | 10 font files (all weights) |
+| TSBC logos | `tsbc-designer/logos/` | 16 variants (RGB, K, REV, stacked, one-line) |
+| PPT generator | `tsbc-designer/generate_presentation.py` | PowerPoint generator with TSBC branding |
 
 ---
 
@@ -17,7 +38,7 @@ An imaginary **"Robotics"** regulated technology website and application for Tec
 | Language | TypeScript | 5.x |
 | Forms | @ngx-formly/core + @ngx-formly/bootstrap | latest |
 | Database | SQLite (sql.js for browser) | latest |
-| Auth | TBD (pending screenshot) | — |
+| Auth | MSAL (Azure AD B2C) — pattern in resources codebase | latest |
 | Testing | Karma + Jasmine (Angular default) | latest |
 | Linting | ESLint + @angular-eslint | latest |
 | CSS | SCSS with TSBC design tokens | — |
@@ -184,8 +205,11 @@ Mirrors: `technicalsafetybc.ca/.../renewal`
 ### 3. Form Application (`/robotics/apply`) — Phase 2
 
 - Dynamic certification renewal form via Angular Formly
-- SQLite backend for data persistence
-- Authentication (details pending)
+- SQLite backend for data persistence (reference: `_tsbc_resources/.../SqliteStorage.ts`)
+- MSAL authentication (reference: `_tsbc_resources/.../app.module.ts`)
+- **Form spec**: 19 Client Portal screenshots in `_tsbc_resources/Robotic Devices/_resources/Client Portal/`
+- **Field definitions**: Reference `_tsbc_resources/.../constants.ts` for Formly patterns
+- **Data models**: Reference `_tsbc_resources/.../models/` for licence, application, certification
 
 ---
 
@@ -242,13 +266,13 @@ npm test                # Tests pass (80%+ coverage)
 | # | Milestone | Issue | Status |
 |---|-----------|-------|--------|
 | 1 | IDEA.md brainstorm | #2 | Done |
-| 2 | Project PRD | #4 | In Progress |
-| 3 | Angular project scaffolding | TBD | Pending |
-| 4 | Shared components (header, footer, hero, cards) | TBD | Pending |
-| 5 | Robotics landing page | TBD | Pending |
-| 6 | Certification renewal page | TBD | Pending |
-| 7 | Form app (pending screenshot) | TBD | Waiting |
-| 8 | Custom icon integration | TBD | Waiting |
+| 2 | Project PRD | #4 | Done |
+| 3 | Angular project scaffolding | #6 | In Progress |
+| 4 | Shared components (header, footer, hero, cards) | #7 | Pending |
+| 5 | Robotics landing page | #8 | Pending |
+| 6 | Certification renewal page | #9 | Pending |
+| 7 | Form app (Client Portal — 19 screenshots as spec) | TBD | Pending |
+| 8 | Custom icon integration (logo.png available) | TBD | Pending |
 | 9 | PowerPoint presentation | TBD | Pending |
 
 ---

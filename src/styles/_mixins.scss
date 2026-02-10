@@ -1,0 +1,43 @@
+@use 'variables' as *;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: $breakpoint-mobile) { @content; }
+  } @else if $breakpoint == tablet {
+    @media (max-width: $breakpoint-tablet) { @content; }
+  } @else if $breakpoint == desktop {
+    @media (min-width: $breakpoint-desktop) { @content; }
+  }
+}
+
+@mixin container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $padding-desktop;
+
+  @include respond-to(mobile) {
+    padding: 0 $padding-mobile;
+  }
+}
+
+@mixin card {
+  background: $white;
+  border-radius: $border-radius;
+  box-shadow: $card-shadow;
+  border: 2px solid transparent;
+  transition: all $transition;
+  cursor: pointer;
+
+  &:hover {
+    background: $primary-dark;
+    color: $white;
+  }
+}
+
+@mixin section-padding {
+  padding: $space-3xl $padding-desktop;
+
+  @include respond-to(mobile) {
+    padding: 25px $padding-mobile;
+  }
+}
