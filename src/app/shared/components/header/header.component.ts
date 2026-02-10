@@ -13,7 +13,8 @@ import { RouterLink } from '@angular/router';
         </a>
         <nav class="nav-links" aria-label="Main navigation">
           <a routerLink="/robotics" class="nav-link">Technologies</a>
-          <a routerLink="/robotics" class="nav-link">Safety in BC</a>
+          <a routerLink="/robotics/renewal" class="nav-link">Renewal</a>
+          <a routerLink="/robotics/apply" class="nav-link nav-link--apply">Apply</a>
           <a href="#" class="nav-link login-btn">Login</a>
         </nav>
         <button
@@ -30,7 +31,8 @@ import { RouterLink } from '@angular/router';
       @if (menuOpen) {
         <nav class="mobile-nav" aria-label="Mobile navigation">
           <a routerLink="/robotics" class="mobile-nav-link" (click)="toggleMenu()">Technologies</a>
-          <a routerLink="/robotics" class="mobile-nav-link" (click)="toggleMenu()">Safety in BC</a>
+          <a routerLink="/robotics/renewal" class="mobile-nav-link" (click)="toggleMenu()">Renewal</a>
+          <a routerLink="/robotics/apply" class="mobile-nav-link" (click)="toggleMenu()">Apply</a>
           <a href="#" class="mobile-nav-link" (click)="toggleMenu()">Login</a>
         </nav>
       }

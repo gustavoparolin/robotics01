@@ -61,6 +61,18 @@
   }
 }
 
+.nav-link--apply {
+  color: $primary;
+  border: 2px solid $primary;
+  border-radius: $border-radius-sm;
+  padding: $space-xs $space-md;
+
+  &:hover {
+    background: $primary;
+    color: $white;
+  }
+}
+
 .login-btn {
   background: $primary;
   color: $white;
