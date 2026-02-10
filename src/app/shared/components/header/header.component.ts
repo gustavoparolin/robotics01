@@ -15,7 +15,7 @@ import { RouterLink } from '@angular/router';
           <a routerLink="/robotics" class="nav-link">Technologies</a>
           <a routerLink="/robotics/renewal" class="nav-link">Renewal</a>
           <a routerLink="/robotics/apply" class="nav-link nav-link--apply">Apply</a>
-          <a href="#" class="nav-link login-btn">Login</a>
+          <a href="/assets/Robotics_Demo_Presentation.pptx" download class="nav-link nav-link--download">Presentation</a>
         </nav>
         <button
           class="mobile-menu-btn"
@@ -33,7 +33,7 @@ import { RouterLink } from '@angular/router';
           <a routerLink="/robotics" class="mobile-nav-link" (click)="toggleMenu()">Technologies</a>
           <a routerLink="/robotics/renewal" class="mobile-nav-link" (click)="toggleMenu()">Renewal</a>
           <a routerLink="/robotics/apply" class="mobile-nav-link" (click)="toggleMenu()">Apply</a>
-          <a href="#" class="mobile-nav-link" (click)="toggleMenu()">Login</a>
+          <a href="/assets/Robotics_Demo_Presentation.pptx" download class="mobile-nav-link" (click)="toggleMenu()">Presentation</a>
         </nav>
       }
     </header>

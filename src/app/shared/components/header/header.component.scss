@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use '../../../../styles/variables' as *;
 
 .tsbc-header {
@@ -73,14 +74,14 @@
   }
 }
 
-.login-btn {
-  background: $primary;
+.nav-link--download {
+  background: $tertiary;
   color: $white;
   border-radius: $border-radius-sm;
   padding: $space-xs $space-md;
 
   &:hover {
-    background: $primary-dark;
+    background: color.adjust($tertiary, $lightness: -10%);
     color: $white;
   }
 }
