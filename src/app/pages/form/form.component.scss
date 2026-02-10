@@ -1,0 +1,472 @@
+@use '../../../styles/variables' as *;
+
+.form-page {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: $space-md $padding-desktop $space-2xl;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $space-md $padding-mobile $space-xl;
+  }
+}
+
+// Breadcrumb
+.breadcrumb {
+  font-size: $font-size-small;
+  color: $gray;
+  margin-bottom: $space-md;
+
+  a {
+    color: $secondary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .separator {
+    margin: 0 $space-xs;
+  }
+}
+
+.page-title {
+  font-size: $font-size-h2;
+  font-weight: $font-weight-bold;
+  color: $primary-dark;
+  margin-bottom: $space-sm;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $font-size-h2-mobile;
+  }
+}
+
+// Form container
+.form-container {
+  max-width: 900px;
+}
+
+.section-title {
+  font-size: $font-size-h3;
+  font-weight: $font-weight-bold;
+  color: $primary-dark;
+  margin-bottom: $space-sm;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $font-size-h3-mobile;
+  }
+}
+
+.info-note {
+  font-size: $font-size-small;
+  color: $gray;
+  margin-bottom: $space-md;
+  display: flex;
+  align-items: flex-start;
+  gap: $space-xs;
+
+  .info-icon {
+    color: $secondary;
+    flex-shrink: 0;
+  }
+}
+
+// Requirements info box
+.requirements-info {
+  margin-top: $space-lg;
+
+  h3 {
+    font-size: $font-size-body;
+    font-weight: $font-weight-semibold;
+    color: $primary-dark;
+    margin-bottom: $space-sm;
+  }
+
+  .info-box {
+    background: $primary-light;
+    border-radius: $border-radius-sm;
+    padding: $space-md;
+
+    p {
+      font-size: $font-size-small;
+      line-height: $line-height;
+      color: $text-dark;
+      margin-bottom: $space-xs;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// Requirements section
+.requirements-section {
+  margin-top: $space-lg;
+
+  h3 {
+    font-size: $font-size-body;
+    font-weight: $font-weight-bold;
+    color: $primary-dark;
+    margin-bottom: $space-sm;
+  }
+}
+
+.entries-list {
+  margin-bottom: $space-md;
+}
+
+.entry-card {
+  background: $white;
+  border: 1px solid $primary-mid;
+  border-radius: $border-radius-sm;
+  padding: $space-md;
+  margin-bottom: $space-sm;
+}
+
+.entry-row {
+  display: flex;
+  gap: $space-md;
+  padding: 4px 0;
+  font-size: $font-size-small;
+
+  .entry-label {
+    color: $gray;
+    font-style: italic;
+    min-width: 120px;
+  }
+}
+
+.add-btn {
+  background: $white;
+  border: 1px solid $primary-dark;
+  color: $primary-dark;
+  padding: $space-xs $space-md;
+  font-size: $font-size-small;
+  font-weight: $font-weight-semibold;
+  border-radius: $border-radius-sm;
+  cursor: pointer;
+  transition: all $transition;
+
+  &:hover {
+    background: $primary-light;
+  }
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #c0392b;
+  font-size: $font-size-small;
+  cursor: pointer;
+  margin-top: $space-xs;
+  padding: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Review
+.review-banner {
+  background: $primary-dark;
+  color: $white;
+  padding: $space-sm $space-md;
+  border-radius: $border-radius-sm;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $space-lg;
+}
+
+.review-section {
+  margin-bottom: $space-lg;
+
+  h3 {
+    font-size: $font-size-body;
+    font-weight: $font-weight-bold;
+    color: $primary-dark;
+    margin-bottom: $space-sm;
+  }
+
+  h4 {
+    font-size: $font-size-small;
+    font-weight: $font-weight-semibold;
+    color: $primary-dark;
+    margin-bottom: $space-xs;
+  }
+}
+
+.review-box {
+  background: $white;
+  border: 1px solid $primary-mid;
+  border-radius: $border-radius-sm;
+  padding: $space-md;
+  margin-bottom: $space-sm;
+
+  p {
+    font-size: $font-size-small;
+    line-height: $line-height;
+    margin-bottom: $space-xs;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Payment
+.payment-section {
+  .fee-table {
+    background: $white;
+    border: 1px solid $primary-mid;
+    border-radius: $border-radius-sm;
+    padding: $space-md;
+    margin-bottom: $space-lg;
+    max-width: 400px;
+  }
+
+  .fee-row {
+    display: flex;
+    justify-content: space-between;
+    padding: $space-xs 0;
+    font-size: $font-size-small;
+
+    &.total {
+      font-weight: $font-weight-bold;
+      font-size: $font-size-body;
+    }
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid $primary-mid;
+    margin: $space-xs 0;
+  }
+
+  .refund-note {
+    font-size: $font-size-tag;
+    color: $gray;
+    margin-top: $space-sm;
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .payment-cards {
+    display: flex;
+    gap: $space-xs;
+    margin-bottom: $space-md;
+
+    .card-icon {
+      background: $primary-light;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: $font-weight-bold;
+      color: $primary-dark;
+    }
+  }
+
+  .payment-form {
+    max-width: 400px;
+
+    .form-field {
+      margin-bottom: $space-sm;
+
+      label {
+        display: block;
+        font-size: $font-size-small;
+        font-weight: $font-weight-semibold;
+        color: $primary-dark;
+        margin-bottom: 4px;
+      }
+
+      input {
+        width: 100%;
+        padding: $space-xs $space-sm;
+        border: 1px solid $primary-mid;
+        border-radius: $border-radius-sm;
+        font-size: $font-size-small;
+        background: $primary-light;
+
+        &:disabled {
+          cursor: not-allowed;
+          opacity: 0.7;
+        }
+      }
+    }
+
+    .form-row {
+      display: flex;
+      gap: $space-sm;
+    }
+
+    .demo-note {
+      font-size: $font-size-tag;
+      color: $tertiary;
+      font-style: italic;
+      margin-top: $space-sm;
+    }
+  }
+}
+
+// Buttons
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: $space-sm;
+  margin-top: $space-xl;
+  padding-top: $space-md;
+  border-top: 1px solid $primary-mid;
+}
+
+.btn-primary {
+  background: $primary-dark;
+  color: $white;
+  border: none;
+  padding: $space-sm $space-lg;
+  font-size: $font-size-small;
+  font-weight: $font-weight-semibold;
+  border-radius: $border-radius-sm;
+  cursor: pointer;
+  transition: background $transition;
+
+  &:hover {
+    background: $primary;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $secondary;
+    outline-offset: 2px;
+  }
+}
+
+.btn-secondary {
+  background: $white;
+  color: $primary-dark;
+  border: 1px solid $primary-dark;
+  padding: $space-sm $space-lg;
+  font-size: $font-size-small;
+  font-weight: $font-weight-semibold;
+  border-radius: $border-radius-sm;
+  cursor: pointer;
+  transition: all $transition;
+
+  &:hover {
+    background: $primary-light;
+  }
+}
+
+// Panel actions
+.panel-actions {
+  display: flex;
+  gap: $space-sm;
+  margin-top: $space-lg;
+  padding-top: $space-md;
+  border-top: 1px solid $primary-mid;
+}
+
+.panel-description {
+  font-size: $font-size-small;
+  color: $gray;
+  margin-bottom: $space-md;
+}
+
+// Confirmation
+.confirmation {
+  text-align: center;
+  padding: $space-3xl 0;
+  max-width: 600px;
+  margin: 0 auto;
+
+  .confirmation-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: $tertiary;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin: 0 auto $space-lg;
+  }
+
+  h2 {
+    font-size: $font-size-h3;
+    color: $tertiary;
+    margin-bottom: $space-sm;
+  }
+
+  p {
+    font-size: $font-size-body;
+    line-height: $line-height;
+    color: $text-dark;
+    margin-bottom: $space-sm;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: $font-size-body-min;
+    }
+  }
+
+  .btn-primary {
+    margin-top: $space-md;
+  }
+}
+
+// Formly form styling overrides
+:host ::ng-deep {
+  .form-group {
+    margin-bottom: $space-md;
+  }
+
+  label {
+    font-size: $font-size-small;
+    font-weight: $font-weight-semibold;
+    color: $primary-dark;
+    margin-bottom: 4px;
+  }
+
+  .form-control {
+    border: 1px solid $primary-mid;
+    border-radius: $border-radius-sm;
+    padding: $space-xs $space-sm;
+    font-size: $font-size-small;
+    transition: border-color $transition;
+
+    &:focus {
+      border-color: $secondary;
+      box-shadow: 0 0 0 2px rgba($secondary, 0.2);
+      outline: none;
+    }
+  }
+
+  .form-check-label {
+    font-size: $font-size-small;
+    font-weight: $font-weight-regular;
+    color: $text-dark;
+  }
+
+  .form-check {
+    padding: 4px 0;
+  }
+
+  .is-invalid {
+    border-color: #c0392b;
+  }
+
+  .invalid-feedback {
+    font-size: $font-size-tag;
+    color: #c0392b;
+  }
+
+  .row {
+    display: flex;
+    gap: $space-sm;
+    flex-wrap: wrap;
+
+    > * {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+}

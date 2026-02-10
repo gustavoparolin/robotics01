@@ -1,0 +1,141 @@
+@use '../../../../styles/variables' as *;
+
+.tsbc-stepper {
+  padding: $space-md 0;
+  margin-bottom: $space-lg;
+  border-bottom: 1px solid $primary-mid;
+}
+
+.stepper-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: $max-width;
+  margin: 0 auto;
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-wrap: wrap;
+    gap: $space-xs;
+  }
+}
+
+.stepper-item {
+  display: flex;
+  align-items: center;
+  flex: 1;
+
+  @media (max-width: $breakpoint-mobile) {
+    flex: none;
+  }
+}
+
+.stepper-btn {
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: $space-xs;
+  border-radius: $border-radius-sm;
+  transition: background $transition;
+  white-space: nowrap;
+
+  &:hover:not(:disabled) {
+    background: $primary-light;
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.6;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $secondary;
+    outline-offset: 2px;
+  }
+}
+
+.stepper-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  font-size: 12px;
+  transition: all $transition;
+
+  .completed & {
+    background: $tertiary;
+    color: $white;
+  }
+
+  .active & {
+    background: $primary;
+    color: $white;
+  }
+
+  .pending & {
+    border: 2px solid $gray;
+    background: $white;
+  }
+}
+
+.check-icon {
+  font-weight: $font-weight-bold;
+  font-size: 14px;
+}
+
+.step-dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+
+  .active & {
+    background: $white;
+  }
+
+  .pending & {
+    background: $gray;
+  }
+}
+
+.stepper-label {
+  font-size: $font-size-small;
+  font-weight: $font-weight-semibold;
+  color: $gray;
+  transition: color $transition;
+
+  .completed & {
+    color: $tertiary;
+  }
+
+  .active & {
+    color: $primary-dark;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $font-size-tag;
+  }
+}
+
+.stepper-connector {
+  flex: 1;
+  height: 2px;
+  margin: 0 $space-xs;
+  background: $primary-mid;
+  min-width: 20px;
+
+  .completed & {
+    background: $tertiary;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    min-width: 10px;
+  }
+}

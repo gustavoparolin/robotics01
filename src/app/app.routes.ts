@@ -15,6 +15,13 @@ export const routes: Routes = [
         (m) => m.RenewalComponent
       ),
   },
+  {
+    path: 'robotics/apply',
+    loadComponent: () =>
+      import('./pages/form/form.component').then(
+        (m) => m.FormComponent
+      ),
+  },
   { path: '', redirectTo: 'robotics', pathMatch: 'full' },
   { path: '**', redirectTo: 'robotics' },
 ];

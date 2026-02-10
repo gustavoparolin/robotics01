@@ -1,0 +1,275 @@
+<app-header />
+
+<div class="form-page">
+  <div class="breadcrumb">
+    <a href="/robotics">Licences</a>
+    <span class="separator">&gt;</span>
+    <a href="/robotics">My licence applications</a>
+    <span class="separator">&gt;</span>
+    <span>Apply for a licence</span>
+  </div>
+
+  <h1 class="page-title">New licence application</h1>
+
+  @if (!submitted) {
+    <app-stepper
+      [steps]="steps"
+      [currentStep]="currentStep"
+      (stepChange)="onStepChange($event)"
+    />
+
+    <div class="form-container">
+
+      <!-- Step 1: Technology -->
+      @if (steps[currentStep].key === 'technology') {
+        <form [formGroup]="form">
+          <formly-form [form]="form" [fields]="fields" [model]="model" />
+        </form>
+
+        @if (model['technology']) {
+          <div class="requirements-info">
+            <h3>Requirements for completing this application</h3>
+            <div class="info-box">
+              <p><strong>Personnel</strong> - You are required to provide maintenance personnel. Additionally, you have the option to provide operations and managerial personnel.</p>
+              <p><strong>Scope</strong> - Indicate your scope of work</p>
+            </div>
+          </div>
+        }
+      }
+
+      <!-- Step 2: Business -->
+      @if (steps[currentStep].key === 'business') {
+        <h2 class="section-title">Business information</h2>
+        <p class="info-note">
+          <span class="info-icon">ⓘ</span>
+          The name specified on submitted company documents must match exactly the company name registered in BC.
+        </p>
+        <form [formGroup]="form">
+          <formly-form [form]="form" [fields]="fields" [model]="model" />
+        </form>
+      }
+
+      <!-- Step 3: Contact -->
+      @if (steps[currentStep].key === 'contact') {
+        <h2 class="section-title">My contact information</h2>
+        <p class="info-note">
+          <span class="info-icon">ⓘ</span>
+          Please ensure your information is up to date.
+        </p>
+        <form [formGroup]="form">
+          <formly-form [form]="form" [fields]="fields" [model]="model" />
+        </form>
+      }
+
+      <!-- Step 4: Requirements -->
+      @if (steps[currentStep].key === 'requirements') {
+        <div class="requirements-info">
+          <h3>Requirements for completing this application</h3>
+          <div class="info-box">
+            <p><strong>Personnel</strong> - You are required to provide maintenance personnel. Additionally, you have the option to provide operations and managerial personnel.</p>
+            <p><strong>Scope</strong> - Indicate your scope of work</p>
+          </div>
+        </div>
+
+        <div class="requirements-section">
+          <h3>Personnel</h3>
+          @if (formDataService.getData().personnel.length > 0) {
+            <div class="entries-list">
+              @for (person of formDataService.getData().personnel; track $index) {
+                <div class="entry-card">
+                  <div class="entry-row"><span class="entry-label">Personnel type</span><span>{{ person.type }}</span></div>
+                  <div class="entry-row"><span class="entry-label">First Name</span><span>{{ person.firstName }}</span></div>
+                  <div class="entry-row"><span class="entry-label">Last Name</span><span>{{ person.lastName }}</span></div>
+                  <div class="entry-row"><span class="entry-label">Primary Phone</span><span>{{ person.primaryPhone }}</span></div>
+                  <div class="entry-row"><span class="entry-label">Mobile</span><span>{{ person.mobile || '-' }}</span></div>
+                  <div class="entry-row"><span class="entry-label">Email</span><span>{{ person.email || '-' }}</span></div>
+                  <button class="remove-btn" (click)="removePersonnel($index)">Remove</button>
+                </div>
+              }
+            </div>
+          }
+          <button class="add-btn" (click)="openPersonnelPanel()">Add personnel</button>
+        </div>
+
+        <div class="requirements-section">
+          <h3>Scope of work</h3>
+          <p class="info-note">
+            <span class="info-icon">ⓘ</span>
+            To keep your Scope of Work saved, please continue and submit your application. If you close or exit without submitting, all changes will be lost.
+          </p>
+          @if (formDataService.getData().scopeOfWork.length > 0) {
+            <div class="entries-list">
+              @for (scope of formDataService.getData().scopeOfWork; track $index) {
+                <div class="entry-card">
+                  <div class="entry-row"><span class="entry-label">Work type</span><span>{{ scope.workType }}</span></div>
+                  <div class="entry-row"><span class="entry-label">Device types</span><span>{{ scope.deviceTypes.join(', ') }}</span></div>
+                  <button class="remove-btn" (click)="removeScopeOfWork($index)">Remove</button>
+                </div>
+              }
+            </div>
+          }
+          <button class="add-btn" (click)="openScopePanel()">Add scope of work</button>
+        </div>
+      }
+
+      <!-- Step 5: Review -->
+      @if (steps[currentStep].key === 'review') {
+        <div class="review-banner">
+          New licence for: Robotics - {{ formDataService.getData().licenceClass || 'Not selected' }}
+        </div>
+
+        <div class="review-section">
+          <h3>Business information</h3>
+          <div class="review-box">
+            <p>{{ formDataService.getData().legalBusinessName }}</p>
+            <p><strong>Business email</strong><br>{{ formDataService.getData().businessEmail || '-' }}</p>
+            <p><strong>Business phone number</strong><br>{{ formDataService.getData().businessPhone || '-' }}</p>
+            <p><strong>Purchase order</strong><br>{{ formDataService.getData().purchaseOrder || '-' }}</p>
+          </div>
+        </div>
+
+        <form [formGroup]="form">
+          <h3>Confirm addresses</h3>
+          <formly-form [form]="form" [fields]="fields" [model]="model" />
+        </form>
+
+        <div class="review-section">
+          <h3>Contact information</h3>
+          <div class="review-box">
+            <p>{{ formDataService.getData().firstName }} {{ formDataService.getData().lastName }}</p>
+            <p><strong>Mobile</strong>: {{ formDataService.getData().mobile || '-' }}</p>
+            <p><strong>Email</strong>: {{ formDataService.getData().contactEmail || '-' }}</p>
+          </div>
+        </div>
+
+        @if (formDataService.getData().personnel.length > 0) {
+          <div class="review-section">
+            <h3>Requirements</h3>
+            <h4>Personnel</h4>
+            @for (person of formDataService.getData().personnel; track $index) {
+              <div class="review-box">
+                <div class="entry-row"><span class="entry-label">Personnel type</span><span>{{ person.type }}</span></div>
+                <div class="entry-row"><span class="entry-label">First Name</span><span>{{ person.firstName }}</span></div>
+                <div class="entry-row"><span class="entry-label">Last Name</span><span>{{ person.lastName }}</span></div>
+              </div>
+            }
+          </div>
+        }
+      }
+
+      <!-- Step 6: Payment -->
+      @if (steps[currentStep].key === 'payment') {
+        <div class="payment-section">
+          <h2 class="section-title">Fee summary</h2>
+          <div class="fee-table">
+            <div class="fee-row">
+              <span>Application Fee</span>
+              <span>$504.00 CAD</span>
+            </div>
+            <hr>
+            <div class="fee-row">
+              <span>Subtotal</span>
+              <span>$504.00 CAD</span>
+            </div>
+            <div class="fee-row">
+              <span>GST</span>
+              <span>$0.00 CAD</span>
+            </div>
+            <hr>
+            <div class="fee-row total">
+              <span>TOTAL AMOUNT DUE</span>
+              <span>$504.00 CAD</span>
+            </div>
+            <p class="refund-note">
+              <span class="info-icon">ⓘ</span>
+              By submitting the application, you agree to Technical Safety BC's Refund Policy.
+            </p>
+          </div>
+
+          <div class="payment-cards">
+            <span class="card-icon visa">VISA</span>
+            <span class="card-icon mc">MC</span>
+            <span class="card-icon amex">AMEX</span>
+          </div>
+
+          <div class="payment-form">
+            <div class="form-field">
+              <label for="card-number">Card number</label>
+              <input id="card-number" type="text" placeholder="•••• •••• •••• ••••" disabled>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="expiry-date">Expiry date(mmyy)</label>
+                <input id="expiry-date" type="text" placeholder="MMYY" disabled>
+              </div>
+              <div class="form-field">
+                <label for="cvv">CVV</label>
+                <input id="cvv" type="text" placeholder="•••" disabled>
+              </div>
+            </div>
+            <p class="demo-note">Payment processing is simulated for this demo.</p>
+          </div>
+        </div>
+      }
+
+      <!-- Navigation buttons -->
+      <div class="form-actions">
+        @if (currentStep > 0) {
+          <button class="btn-secondary" (click)="previousStep()">Previous</button>
+        }
+        @if (currentStep < steps.length - 1) {
+          <button class="btn-primary" (click)="nextStep()">Save &amp; Continue</button>
+        }
+        @if (currentStep === steps.length - 1) {
+          <button class="btn-primary" (click)="submitApplication()">Submit</button>
+        }
+      </div>
+    </div>
+  }
+
+  <!-- Confirmation -->
+  @if (submitted) {
+    <div class="confirmation">
+      <div class="confirmation-icon">&#10003;</div>
+      <h2>Thank you for submitting your application.</h2>
+      <p>Your payment has been received and we are processing your licence application.</p>
+      <p><strong>Need a copy of your receipt?</strong> Click the button below to generate your receipt, and review details of your application.</p>
+      <button class="btn-primary" (click)="submitted = false; formDataService.reset(); currentStep = 0">
+        View receipt and details
+      </button>
+    </div>
+  }
+</div>
+
+<!-- Side panel: Add Personnel -->
+<app-side-panel
+  title="Add personnel"
+  [isOpen]="personnelPanelOpen"
+  (panelClose)="personnelPanelOpen = false"
+>
+  <form [formGroup]="personnelForm">
+    <formly-form [form]="personnelForm" [fields]="personnelFields" [model]="personnelModel" />
+  </form>
+  <div class="panel-actions">
+    <button class="btn-primary" (click)="addPersonnel()">Add</button>
+    <button class="btn-secondary" (click)="personnelPanelOpen = false">Cancel</button>
+  </div>
+</app-side-panel>
+
+<!-- Side panel: Add Scope of Work -->
+<app-side-panel
+  title="Add scope of work"
+  [isOpen]="scopePanelOpen"
+  (panelClose)="scopePanelOpen = false"
+>
+  <p class="panel-description">Create a different scope of work record for each work type and select all device types that apply.</p>
+  <form [formGroup]="scopeForm">
+    <formly-form [form]="scopeForm" [fields]="scopeFields" [model]="scopeModel" />
+  </form>
+  <div class="panel-actions">
+    <button class="btn-primary" (click)="addScope()">Add</button>
+    <button class="btn-secondary" (click)="scopePanelOpen = false">Cancel</button>
+  </div>
+</app-side-panel>
+
+<app-footer />
