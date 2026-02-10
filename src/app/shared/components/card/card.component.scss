@@ -1,0 +1,87 @@
+@use '../../../../styles/variables' as *;
+
+.tsbc-card {
+  display: flex;
+  flex-direction: column;
+  background: $white;
+  border-radius: $border-radius;
+  box-shadow: $card-shadow;
+  border: 2px solid transparent;
+  padding: $space-lg;
+  transition: all $transition;
+  cursor: pointer;
+  text-decoration: none;
+  color: $text-dark;
+
+  &:hover {
+    background: $primary-dark;
+    color: $white;
+    border-color: $primary-dark;
+
+    .card-tag {
+      color: $primary-mid;
+    }
+
+    .card-cta {
+      color: $white;
+    }
+  }
+
+  &.dark {
+    background: $primary;
+    color: $white;
+
+    .card-tag {
+      color: $primary-mid;
+    }
+
+    .card-cta {
+      color: $white;
+    }
+
+    &:hover {
+      background: $primary-dark;
+    }
+  }
+}
+
+.card-tag {
+  font-size: $font-size-tag;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $gray;
+  margin-bottom: $space-sm;
+}
+
+.card-title {
+  font-size: $font-size-body;
+  font-weight: $font-weight-bold;
+  margin-bottom: $space-sm;
+  line-height: 1.3;
+}
+
+.card-description {
+  font-size: $font-size-small;
+  line-height: 1.5;
+  margin-bottom: $space-md;
+  flex: 1;
+}
+
+.card-cta {
+  font-size: $font-size-small;
+  font-weight: $font-weight-semibold;
+  color: $primary;
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+  margin-top: auto;
+}
+
+.cta-arrow {
+  transition: transform $transition;
+
+  .tsbc-card:hover & {
+    transform: translateX(4px);
+  }
+}

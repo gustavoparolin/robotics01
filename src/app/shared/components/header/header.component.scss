@@ -1,0 +1,116 @@
+@use '../../../../styles/variables' as *;
+
+.tsbc-header {
+  background: $white;
+  border-bottom: 2px solid $primary-light;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $padding-desktop;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 0 $padding-mobile;
+    height: 64px;
+  }
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+
+  @media (max-width: $breakpoint-mobile) {
+    height: 32px;
+  }
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: $space-lg;
+
+  @media (max-width: $breakpoint-mobile) {
+    display: none;
+  }
+}
+
+.nav-link {
+  font-size: $font-size-small;
+  font-weight: $font-weight-semibold;
+  color: $text-dark;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: $space-xs $space-sm;
+  transition: color $transition;
+
+  &:hover {
+    color: $secondary;
+  }
+}
+
+.login-btn {
+  background: $primary;
+  color: $white;
+  border-radius: $border-radius-sm;
+  padding: $space-xs $space-md;
+
+  &:hover {
+    background: $primary-dark;
+    color: $white;
+  }
+}
+
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: $space-xs;
+
+  @media (max-width: $breakpoint-mobile) {
+    display: flex;
+  }
+}
+
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: $text-dark;
+  border-radius: 2px;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  background: $white;
+  border-top: 1px solid $primary-light;
+  padding: $space-sm $padding-mobile;
+}
+
+.mobile-nav-link {
+  padding: $space-sm 0;
+  font-size: $font-size-body-min;
+  font-weight: $font-weight-semibold;
+  color: $text-dark;
+  border-bottom: 1px solid $primary-light;
+
+  &:hover {
+    color: $secondary;
+  }
+}
