@@ -1,0 +1,55 @@
+// TSBC Design System Tokens
+
+// Colors
+$primary: #00497B;
+$primary-dark: #1B2D51;
+$primary-mid: #B5CEDF;
+$primary-light: #E5EEF2;
+$secondary: #46C1FE;
+$tertiary: #3EA893;
+$white: #FFFFFF;
+$text-dark: #1B2D51;
+$gray: #A0A7B6;
+
+// Typography
+$font-family: 'Inter', Arial, sans-serif;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-size-h1: 65px;
+$font-size-h1-mobile: 35px;
+$font-size-h2: 50px;
+$font-size-h2-mobile: 30px;
+$font-size-h3: 30px;
+$font-size-h3-mobile: 26px;
+$font-size-body: 20px;
+$font-size-body-min: 16px;
+$font-size-small: 14px;
+$font-size-tag: 12px;
+$line-height: 1.5;
+
+// Spacing (8px base)
+$space-xs: 8px;
+$space-sm: 16px;
+$space-md: 24px;
+$space-lg: 32px;
+$space-xl: 48px;
+$space-2xl: 64px;
+$space-3xl: 100px;
+
+// Components
+$border-radius: 12px;
+$border-radius-sm: 8px;
+$card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+$transition: 200ms ease;
+
+// Breakpoints
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+$breakpoint-desktop: 1280px;
+
+// Layout
+$max-width: 1280px;
+$padding-desktop: 50px;
+$padding-mobile: 20px;

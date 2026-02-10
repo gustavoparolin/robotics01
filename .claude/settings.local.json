@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(dir:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\ndocs\\(prd\\): add _tsbc_resources references and update milestones\n\n- Added Resources section with full inventory of _tsbc_resources assets\n- Updated auth to MSAL \\(Azure AD B2C\\) based on codebase example\n- Form app now references 19 Client Portal screenshots as spec\n- Updated milestone statuses and issue numbers\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(npx -y @angular/cli@19 new robotics01 --directory . --routing --style scss --skip-git --ssr=false --skip-tests=false --force)",
+      "Bash(npm install:*)",
+      "Bash(npx ng add:*)",
+      "Bash(npx ng lint:*)"
+    ]
+  }
+}
