@@ -1,0 +1,101 @@
+@use '../../../styles/variables' as *;
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $padding-desktop;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 0 $padding-mobile;
+  }
+}
+
+section {
+  padding: $space-2xl 0;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $space-xl 0;
+  }
+}
+
+h2 {
+  font-size: $font-size-h2;
+  font-weight: $font-weight-bold;
+  color: $primary-dark;
+  margin-bottom: $space-md;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $font-size-h2-mobile;
+  }
+}
+
+// Quick Actions
+.quick-actions {
+  background: $primary-light;
+
+  .actions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $space-md;
+
+    @media (max-width: $breakpoint-mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// Accordion Section
+.accordion-section {
+  background: $white;
+
+  app-accordion + app-accordion {
+    display: block;
+    margin-top: $space-xs;
+  }
+
+  ul {
+    margin: $space-sm 0;
+    padding-left: $space-md;
+
+    li {
+      font-size: $font-size-body;
+      line-height: $line-height;
+      color: $text-dark;
+      margin-bottom: $space-xs;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: $font-size-body-min;
+      }
+    }
+  }
+
+  p {
+    font-size: $font-size-body;
+    line-height: $line-height;
+    color: $text-dark;
+    margin-bottom: $space-sm;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: $font-size-body-min;
+    }
+  }
+}
+
+// Related Information
+.related-section {
+  background: $primary-light;
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-md;
+
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

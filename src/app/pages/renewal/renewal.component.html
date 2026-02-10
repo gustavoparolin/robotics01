@@ -1,0 +1,106 @@
+<app-header />
+
+<!-- 1. Hero -->
+<app-hero
+  title="Certification Renewal"
+  subtitle="Robotics Technician — Certification Renewal"
+  backgroundColor="#B5CEDF"
+/>
+
+<!-- 2. Quick Action Cards -->
+<section class="quick-actions">
+  <div class="container">
+    <div class="actions-grid">
+      <app-card
+        title="Online Services"
+        description="Login to your Online Services account to renew your certificate."
+        ctaText="Login"
+        [dark]="true"
+      />
+      <app-card
+        title="Register Now"
+        description="Register for an Online Services account if you do not have one."
+        ctaText="Register"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- 3. Accordion Sections -->
+<section class="accordion-section">
+  <div class="container">
+    <app-accordion title="When Do I Need to Renew?" panelId="when-renew">
+      <p>
+        Your Robotics Technician — Class A, B, or C certificate is valid for
+        three years from the date it was issued or last renewed. To renew your
+        certificate, log in to your Online Services account. If you do not have
+        an account, you will need to register for one.
+      </p>
+    </app-accordion>
+
+    <app-accordion title="What Happens if I Do Not Renew?" panelId="not-renew">
+      <p>If your certificate expires, you may be subject to the following:</p>
+      <ul>
+        <li>A safety officer may issue a compliance order or monetary penalty</li>
+        <li>A safety officer may order you to stop work immediately</li>
+        <li>You will be required to apply for a new certificate, which includes applicable fees</li>
+        <li>You may be required to successfully complete the certification exam and interview</li>
+      </ul>
+    </app-accordion>
+
+    <app-accordion title="How Do I Update My Skills Passport?" panelId="skills-passport">
+      <p>
+        Updating your Skills Passport is encouraged as it provides evidence of
+        your competence and experience. While not mandatory for renewal, we
+        recommend you submit your Skills Passport paperwork at the time of renewal.
+      </p>
+      <p>Class-specific declaration forms are available for:</p>
+      <ul>
+        <li>Class A — Industrial Robots</li>
+        <li>Class B — Service and Autonomous Robots</li>
+        <li>Class C — Drone Systems</li>
+      </ul>
+      <p>Declaration forms must be signed by a designated signing officer.</p>
+    </app-accordion>
+
+    <app-accordion title="Continuing Education Requirements" panelId="continuing-ed">
+      <p>
+        You must complete a minimum of 24 hours of continuing education during
+        your three-year certificate period. Training must be approved by
+        Technical Safety BC.
+      </p>
+      <p>The 24 hours are divided as follows:</p>
+      <ul>
+        <li>6 hours of trade-specific safety training</li>
+        <li>6 hours of training on the Act, regulations, and code</li>
+        <li>12 hours of technical training specific to your certificate class</li>
+      </ul>
+    </app-accordion>
+  </div>
+</section>
+
+<!-- 4. Related Information -->
+<section class="related-section">
+  <div class="container">
+    <h2>Related Information</h2>
+    <div class="related-grid">
+      <app-card
+        tag="CERTIFICATION"
+        title="Robotics Technician"
+        ctaText="Learn More"
+      />
+      <app-card
+        tag="CERTIFICATION"
+        title="Exam Information"
+        ctaText="Learn More"
+      />
+      <app-card
+        tag="CERTIFICATION"
+        title="Skills Passport"
+        ctaText="Learn More"
+      />
+    </div>
+  </div>
+</section>
+
+<app-footer />
