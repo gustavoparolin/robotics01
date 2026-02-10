@@ -1,13 +1,21 @@
 import { Component } from '@angular/core';
+import { HeaderComponent } from '../../shared/components/header/header.component';
+import { FooterComponent } from '../../shared/components/footer/footer.component';
+import { HeroComponent } from '../../shared/components/hero/hero.component';
+import { CardComponent } from '../../shared/components/card/card.component';
+import { CtaBannerComponent } from '../../shared/components/cta-banner/cta-banner.component';
 
 @Component({
   selector: 'app-robotics',
   standalone: true,
-  template: `
-    <div style="padding: 48px; text-align: center;">
-      <h1>Robotics</h1>
-      <p>We oversee the safe installation, operation, maintenance, and alteration of robotic and autonomous systems across British Columbia.</p>
-    </div>
-  `,
+  imports: [
+    HeaderComponent,
+    FooterComponent,
+    HeroComponent,
+    CardComponent,
+    CtaBannerComponent,
+  ],
+  templateUrl: './robotics.component.html',
+  styleUrl: './robotics.component.scss',
 })
 export class RoboticsComponent {}

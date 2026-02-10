@@ -1,0 +1,224 @@
+<app-header />
+
+<!-- 1. Hero -->
+<app-hero
+  title="Robotics"
+  subtitle="We oversee the safe installation, operation, maintenance, and alteration of robotic and autonomous systems across British Columbia."
+  backgroundColor="#B5CEDF"
+  imageUrl="/assets/icons/robotics-logo.png"
+  imageAlt="Robotics technology icon"
+/>
+
+<!-- 2. Advancing Robotics Safety -->
+<section class="intro-section">
+  <div class="container">
+    <h2>Advancing Robotics Safety</h2>
+    <p>
+      We oversee the safety of industrial robots, service robots, delivery drones,
+      autonomous vehicles, surgical robots, and warehouse automation systems in
+      accordance with the Safety Standards Act and the Robotics Safety Regulation.
+    </p>
+  </div>
+</section>
+
+<!-- 3. Certificate Renewal CTA -->
+<app-cta-banner
+  heading="Is it time to renew your certificate?"
+  body="All certified Robotics Technicians are required to renew their certificate every three years. Operating with an expired certificate is a violation of the Robotics Safety Regulation."
+  buttonText="Renew Now"
+  buttonLink="/robotics/renewal"
+  backgroundColor="#00497B"
+/>
+
+<!-- 4. Robotics Regulations -->
+<section class="regulations-section">
+  <div class="container">
+    <h2>Robotics Regulations</h2>
+    <p>The regulatory framework for robotics in British Columbia includes:</p>
+    <ul class="regulation-links">
+      <li><a href="#">Safety Standards Act</a></li>
+      <li><a href="#">Safety Standards General Regulation</a></li>
+      <li><a href="#">Robotics Safety Regulation</a></li>
+      <li><a href="#">Fee Setting Criteria Regulation</a></li>
+      <li><a href="#">Monetary Penalties Regulation</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 5. CSA R100 Robotics Safety Code -->
+<section class="code-section">
+  <div class="container">
+    <h2>CSA R100 Robotics Safety Code</h2>
+    <p>
+      As of April 30, 2025, Technical Safety BC has adopted the CSA R100-25
+      Robotics Safety Code. All licensed contractors are required to have the
+      current code book.
+    </p>
+    <p class="code-refs">Reference codes: CSA R100, ISO 10218, ISO 13482, CAN/CSA-Z434</p>
+    <a href="#" class="text-link">Purchase from CSA Standards Store &rarr;</a>
+  </div>
+</section>
+
+<!-- 6. Directives & Regulatory Notices -->
+<section class="directives-section">
+  <div class="container">
+    <div class="directives-grid">
+      <div class="directive-card">
+        <h3>Directives, Information Bulletins, Safety Orders and Advisories</h3>
+        <a href="#" class="text-link">View Regulatory Notices &rarr;</a>
+      </div>
+      <div class="directive-card">
+        <h3>Incident Investigations</h3>
+        <a href="#" class="text-link">View Incident Investigations &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. You Might Be Interested In -->
+<section class="interest-section">
+  <div class="container">
+    <h2>You Might Be Interested In</h2>
+    <div class="card-grid">
+      <app-card
+        tag="GUIDELINES"
+        title="Professional Practice Guidelines for Robotics"
+        ctaText="Learn More"
+      />
+      <app-card
+        tag="CERTIFICATION"
+        title="Robotics Technician"
+        ctaText="Learn More"
+      />
+      <app-card
+        tag="CERTIFICATION"
+        title="Certification Renewal"
+        link="/robotics/renewal"
+        ctaText="Learn More"
+      />
+      <app-card
+        tag="LICENCES"
+        title="Robotics Licences"
+        ctaText="Learn More"
+      />
+      <app-card
+        tag="ASSESSMENTS"
+        title="Robotics Assessments"
+        ctaText="Learn More"
+      />
+      <app-card
+        tag="DESIGN REGISTRATION"
+        title="Robotics Design Registration"
+        ctaText="Learn More"
+      />
+      <app-card
+        tag="INSTALLATION PERMITS"
+        title="Installation Permits"
+        ctaText="Learn More"
+      />
+      <app-card
+        tag="OPERATING PERMITS"
+        title="Operating Permits"
+        ctaText="Learn More"
+      />
+      <app-card
+        tag="CERTIFICATION"
+        title="CSA R100 Robotics Safety Code"
+        ctaText="Learn More"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- 8. Safety Report -->
+<app-cta-banner
+  heading="What Are the Leading Technical Safety Risks in BC?"
+  body="Read our comprehensive safety report and learn more about the incidents, hazards, and initiatives that shaped the safety system in BC in 2023."
+  buttonText="Read More"
+  buttonLink="#"
+  backgroundColor="#1B2D51"
+/>
+
+<!-- 9. Home Service Robots -->
+<section class="highlight-section">
+  <div class="container">
+    <div class="highlight-card">
+      <div class="highlight-content">
+        <h2>Home Service Robots</h2>
+        <p>
+          Learn about the necessary steps to ensure your home service robot
+          installation is completed according to the CSA R100 Robotics Safety Code.
+        </p>
+        <a href="#" class="text-link">Learn More &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Delivery Drone Safety Tips -->
+<section class="highlight-section alt">
+  <div class="container">
+    <div class="highlight-card">
+      <div class="highlight-content">
+        <h2>Delivery Drone Safety Tips</h2>
+        <p>
+          We interact with delivery drones so often, it is easy to forget they
+          are complex machines. However, it is important to remind operators and
+          the public of the importance of basic drone safety practices.
+        </p>
+        <a href="#" class="text-link">Learn More &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. Online Services -->
+<section class="services-section">
+  <div class="container">
+    <h2>Online Services</h2>
+    <div class="services-grid">
+      <app-card
+        title="Manage your account"
+        description="Login to manage your account."
+        ctaText="Login"
+        [dark]="true"
+      />
+      <app-card
+        title="Pay an invoice"
+        description="Login to pay your invoice."
+        ctaText="Login"
+        [dark]="true"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- 12. Related Information -->
+<section class="related-section">
+  <div class="container">
+    <h2>Related Information</h2>
+    <div class="related-grid">
+      <app-card
+        tag="CONTACT"
+        title="Pay an Invoice"
+        description="Pay your invoice through our Online Services platform."
+        ctaText="Learn More"
+        [dark]="true"
+      />
+      <app-card
+        tag="COMPLIANCE"
+        title="Compliance and Enforcement"
+        description="Compliance and enforcement is critical for ensuring that non-compliances and hazardous conditions are rectified."
+        ctaText="Learn More"
+      />
+      <app-card
+        tag="FEES"
+        title="2026 Fee Schedules"
+        description="Learn about how fees are set and what they are used for."
+        ctaText="Learn More"
+      />
+    </div>
+  </div>
+</section>
+
+<app-footer />
